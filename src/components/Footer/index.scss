@@ -1,0 +1,9 @@
+@import "../../style/global.scss";
+
+footer {
+  margin-top: auto;
+  padding: 30px 10px;
+
+  background: $header-footer-bg;
+  border-top: 1px solid $header-footer-border-color;
+}

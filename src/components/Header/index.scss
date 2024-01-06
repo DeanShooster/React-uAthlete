@@ -1,0 +1,13 @@
+@import "../../style/global.scss";
+
+header {
+  padding: 0 80px;
+  min-height: 80px;
+
+  background: $header-footer-bg;
+  border-bottom: 1px solid $header-footer-border-color;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

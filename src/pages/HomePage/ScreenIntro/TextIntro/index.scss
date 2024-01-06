@@ -1,0 +1,45 @@
+@import "../../../../style/global.scss";
+
+.home-screen-text-intro {
+  @media (max-width: $mobile) {
+    margin: 0 0 25px 25px;
+  }
+
+  h1 {
+    max-width: 500px;
+    margin: 0 0 10px 0;
+
+    font-size: 70px;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1em;
+
+    @media (max-width: $ipad) {
+      max-width: 400px;
+      font-size: 48px;
+    }
+    @media (max-width: $mobile) {
+      max-width: 350px;
+      font-size: 32px;
+    }
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0;
+
+    font-size: 32px;
+    line-height: 1.1em;
+
+    @media (max-width: $ipad) {
+      max-width: 400px;
+      font-size: 20px;
+      line-height: 1.25em;
+    }
+    @media (max-width: $mobile) {
+      max-width: 300px;
+      font-size: 16px;
+    }
+  }
+}

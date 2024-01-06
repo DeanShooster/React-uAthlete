@@ -1,0 +1,31 @@
+@import "../../../style/global.scss";
+
+.home-news-feed {
+  margin: 40px 0 40px 0;
+
+  @media (max-width: $mobile) {
+    width: 80%;
+    margin: 20px auto 30px auto;
+  }
+
+  h1 {
+    margin: 0 0 20px 0;
+
+    font-size: 3rem;
+    letter-spacing: -1px;
+
+    @media (max-width: $ipad) {
+      font-size: 2.5rem;
+    }
+    @media (max-width: $mobile) {
+      font-size: 2rem;
+    }
+  }
+
+  .news-feed-container {
+    display: flex;
+    justify-content: space-between;
+    row-gap: 24px;
+    flex-wrap: wrap;
+  }
+}

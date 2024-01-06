@@ -1,0 +1,139 @@
+//*********************************************** Font Themes **********************************************\\
+@font-face {
+  font-family: Roboto, sans-serif;
+  src: url("../../public/Roboto-Regular.ttf") format("trueType");
+}
+
+$main-font: "Roboto", sans-serif;
+
+//*********************************************** Color Themes **********************************************\\
+$main-bg: #0f0f0f;
+$main-text-color: #e8e8e8;
+$orange: #df990e;
+
+$header-footer-bg: linear-gradient(to right, #000000, #0e0d0d, #000000);
+$header-footer-border-color: #282828;
+
+//*********************************************** Media **********************************************\\
+$ipad: 1250px;
+$mobile: 600px;
+
+//*********************************************** Mixin **********************************************\\
+@mixin btn-default($bg-color, $text-color) {
+  padding: 10px 15px;
+
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 1px;
+
+  background: $bg-color;
+  color: $text-color;
+
+  border: none;
+  border-radius: 5px;
+
+  transition: 0.5s;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 3px 1px $bg-color;
+    background: transparent;
+    outline: 1px solid $orange;
+    color: $orange;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 8px 12px;
+  }
+}
+
+@mixin general-input {
+  padding: 6px 8px;
+
+  border: none;
+  border-radius: 5px;
+
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+
+  &:focus {
+    outline: none;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 6px 4px;
+    font-size: 1rem;
+  }
+}
+
+@mixin numeric-input {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+//*********************************************** Classes **********************************************\\
+.global-privacy-policy-page {
+  max-width: 1500px;
+
+  @media (max-width: $mobile) {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .global-privacy-policy-title-last-update-wrapper {
+    margin: 24px 0;
+
+    display: flex;
+    align-items: flex-end;
+    column-gap: 24px;
+
+    @media (max-width: $ipad) {
+      margin: 16px 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @media (max-width: $mobile) {
+      margin: 16px 0;
+      align-items: center;
+      flex-flow: column;
+      row-gap: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 4.375rem;
+
+      @media (max-width: $ipad) {
+        font-size: 3.25rem;
+      }
+      @media (max-width: $mobile) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .global-privacy-policy-last-updated {
+      width: fit-content;
+      padding: 20px 60px;
+
+      border: 1px solid $main-text-color;
+      border-radius: 5px;
+
+      font-size: 1rem;
+
+      @media (max-width: $ipad) {
+        padding: 15px 20px;
+      }
+      @media (max-width: $mobile) {
+        padding: 10px 20px;
+      }
+    }
+  }
+}

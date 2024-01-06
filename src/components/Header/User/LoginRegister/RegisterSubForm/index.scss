@@ -1,0 +1,38 @@
+@import "../../../../../style/global.scss";
+
+.register-sub-form-wrapper {
+  & > div {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center !important;
+    row-gap: 8px;
+
+    label {
+      font-size: 1rem;
+    }
+
+    select {
+      padding: 4px 8px;
+      max-width: 100px;
+
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    input {
+      padding: 4px 8px;
+      max-width: 40px;
+
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    @include numeric-input;
+  }
+}

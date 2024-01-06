@@ -1,0 +1,5 @@
+@import "../../../style/global.scss";
+
+.login-btn {
+  @include btn-default($orange, #000000);
+}

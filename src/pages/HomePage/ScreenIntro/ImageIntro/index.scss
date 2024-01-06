@@ -1,0 +1,17 @@
+@import "../../../../style/global.scss";
+
+.home-screen-image-intro-wrapper {
+  filter: brightness(75%);
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+
+  img {
+    max-width: 500px;
+
+    @media (max-width: $ipad) {
+      max-width: 325px;
+    }
+  }
+}

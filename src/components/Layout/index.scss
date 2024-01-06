@@ -1,0 +1,12 @@
+@import "../../style/global.scss";
+
+.layout {
+  padding: 0 80px;
+
+  @media (max-width: $ipad) {
+    padding: 0 30px;
+  }
+  @media (max-width: $mobile) {
+    padding: 0;
+  }
+}
