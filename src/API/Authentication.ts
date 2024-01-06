@@ -1,4 +1,5 @@
-import { errorHandler, server } from "./config";
+import { errorHandler, server, errorObjectCreation } from "./config";
+import { STATUS_CODES } from "./statusCodes";
 
 const baseURL = "/Auth";
 
@@ -18,4 +19,14 @@ export async function Login(credentials: { [key: string]: string }) {
     body: JSON.stringify(credentials),
   });
   return errorHandler(result);
+}
+
+export async function IsAuth(token: string | null) {
+  if (token) {
+    const result = await fetch(`${server}${baseURL}/Validation`, {
+      method: "GET",
+      headers: { token },
+    });
+    return errorHandler(result);
+  } else return errorObjectCreation(STATUS_CODES.noAuth);
 }

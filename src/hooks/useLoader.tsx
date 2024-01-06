@@ -2,10 +2,16 @@ import { useState } from "react";
 
 import { Loader } from "../components/Loader";
 
-export const useLoader = () => {
-  const [isLoading, setIsLoading] = useState(true);
+interface IUseLoader {
+  init?: boolean;
+  size?: number;
+  containerMargin?: number;
+}
 
-  const loader: React.ReactNode = <Loader />;
+export const useLoader = ({ init = true, size, containerMargin }: IUseLoader = {}) => {
+  const [isLoading, setIsLoading] = useState(init);
+
+  const loader: React.ReactNode = <Loader size={size} containerMargin={containerMargin} />;
 
   return { isLoading, setIsLoading, loader };
 };
