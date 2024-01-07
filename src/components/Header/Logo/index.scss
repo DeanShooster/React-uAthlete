@@ -1,3 +1,5 @@
+@import "../../../style/global.scss";
+
 .logo-wrapper {
   display: flex;
   align-items: flex-end;
@@ -6,15 +8,27 @@
   img:nth-child(1) {
     width: 2.5rem;
     transform: rotateY(180deg);
+
+    @media (max-width: $mobile) {
+      width: 1.75rem;
+    }
   }
 
   img:nth-child(2) {
     width: 2rem;
     transition: 0.5s;
+
+    @media (max-width: $mobile) {
+      width: 1.5rem;
+    }
   }
 
   img:nth-child(3) {
     width: 2.5rem;
+
+    @media (max-width: $mobile) {
+      width: 1.75rem;
+    }
   }
 
   &:hover {
@@ -23,6 +37,10 @@
     img:nth-child(2) {
       width: 2rem;
       animation: pump linear 0.5s infinite;
+
+      @media (max-width: $mobile) {
+        width: 1.5rem;
+      }
     }
   }
 }

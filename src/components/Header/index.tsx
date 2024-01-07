@@ -1,10 +1,11 @@
 import { useContext } from "react";
+import { AthleteContext } from "../../context/AthleteContext";
 
 import { Logo } from "./Logo";
 import { User } from "./User";
+import { Profilo } from "./Profilo";
 
 import "./index.scss";
-import { AthleteContext } from "../../context/AthleteContext";
 
 export const Header = () => {
   const { athlete } = useContext(AthleteContext);
@@ -12,7 +13,7 @@ export const Header = () => {
   return (
     <header>
       <Logo />
-      {athlete ? <div>athlete!</div> : <User />}
+      {athlete ? <Profilo /> : <User />}
     </header>
   );
 };
