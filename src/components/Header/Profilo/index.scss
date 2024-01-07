@@ -8,7 +8,7 @@
   column-gap: 16px;
 
   @media (max-width: $mobile) {
-    column-gap: 8px;
+    column-gap: 12px;
   }
 
   .athlete-name {
@@ -20,8 +20,12 @@
     font-weight: bold;
     font-family: "Monoton", Helvetica, sans-serif;
 
+    transition: 0.5s;
+
     &:hover {
       cursor: pointer;
+      transform: scale(1.1);
+      text-decoration: underline;
     }
 
     @media (max-width: $mobile) {

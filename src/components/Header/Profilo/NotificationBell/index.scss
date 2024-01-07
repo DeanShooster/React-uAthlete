@@ -7,9 +7,6 @@
     width: 26px;
     height: 26px;
 
-    animation: ringing-bell 5s ease-out infinite;
-    animation-delay: 3s;
-
     &:hover {
       cursor: pointer;
     }
@@ -32,11 +29,20 @@
 
     background-color: $orange;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     @media (max-width: $mobile) {
       width: 10px;
       height: 10px;
     }
   }
+}
+
+.ringing-bell-animation {
+  animation: ringing-bell 5s ease-out infinite;
+  animation-delay: 3s;
 }
 
 @keyframes ringing-bell {

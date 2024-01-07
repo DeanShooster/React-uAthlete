@@ -17,6 +17,16 @@ interface IAthlete {
     height: number;
   };
   athleteRank: number;
+  notifications: {
+    isRead: boolean;
+    messages: [
+      {
+        title: string;
+        message: string;
+        date: Date;
+      }
+    ];
+  };
   progressionUpdates: Date[];
   progress: {
     strength: {

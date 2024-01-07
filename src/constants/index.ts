@@ -7,6 +7,9 @@ interface IScreenSize {
 export const screenSize: IScreenSize = { ipad: 1250, mobile: 600 };
 export const tokenName: string = "uAthleteToken";
 
+// Style
+export const white: string = "#e8e8e8";
+
 // News Feed
 export const newsFeedLimit: number = 8;
 
