@@ -19,3 +19,6 @@ export const minPasswordLength: number = 8;
 export const maxPasswordLength: number = 12;
 export const minWeightHeight: number = 50;
 export const maxWeightHeight: number = 250;
+
+// Notifications
+export const notificationsLimit: number = 8;

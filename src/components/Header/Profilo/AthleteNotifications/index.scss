@@ -1,0 +1,124 @@
+@import "../../../../style/global.scss";
+
+.notifications-container {
+  position: absolute;
+  left: 0;
+  top: 80px;
+  z-index: 10;
+
+  width: 94.5%;
+  padding: 20px 50px;
+
+  background-color: $main-bg;
+
+  animation: slide-in 0.5s ease-out;
+
+  @media (max-width: $ipad) {
+    padding: 20px 30px;
+  }
+  @media (max-width: $mobile) {
+    top: 60px;
+    padding: 20px 17px;
+  }
+
+  .close-notifications {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  & > h1 {
+    margin: 0 0 10px 0;
+
+    letter-spacing: 0.5px;
+  }
+
+  .notifications-wrapper {
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+
+    @media (max-width: $ipad) {
+      padding-right: 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(1, 1fr);
+      padding-right: 10px;
+    }
+
+    .notification-wrapper {
+      position: relative;
+
+      padding: 25px 30px 15px 30px;
+
+      border: 1px solid $header-footer-border-color;
+      border-radius: 5px;
+      box-shadow: 0 0 5px 0px rgba(100, 100, 100, 0.25);
+
+      background-color: black;
+
+      @media (max-width: $ipad) {
+        padding: 25px 20px 15px 20px;
+      }
+
+      time {
+        position: absolute;
+        top: 7px;
+        right: 10px;
+
+        font-size: 0.875rem;
+        color: #d3d3d3c7;
+
+        @media (max-width: $mobile) {
+          font-size: 0.8rem;
+        }
+      }
+
+      h2 {
+        margin: 0 0 10px 0;
+
+        font-size: 1.25rem;
+        letter-spacing: 0.5px;
+        font-style: italic;
+
+        @media (max-width: $ipad) {
+          margin: 5px 0;
+          font-size: 1.15rem;
+        }
+
+        @media (max-width: $mobile) {
+          font-size: 1.05rem;
+        }
+      }
+
+      p {
+        margin: 0;
+
+        font-size: 1rem;
+        word-spacing: 1px;
+
+        @media (max-width: $mobile) {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .notification-close-wrapper {
+    width: 100%;
+    display: flex;
+
+    button {
+      @include btn-default($orange, black);
+      margin: 10px auto 0 auto;
+    }
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+}
