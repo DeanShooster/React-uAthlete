@@ -2,8 +2,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routes } from "./Routes";
 
 import { Header } from "./components/Header";
-import { HomePage } from "./pages/HomePage";
 import { Layout } from "./components/Layout";
+import { PrivateGuard } from "./components/PrivateGuard";
+import { HomePage } from "./pages/HomePage";
+import { AthleteCard } from "./pages/AthleteCard";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import { DataPolicy } from "./pages/DataPolicy";
 import { Footer } from "./components/Footer";
@@ -24,6 +26,9 @@ function App() {
               <Route path={routes.Home.path} element={<HomePage />} />
               <Route path={routes.Privacy.path} element={<PrivacyPolicy />} />
               <Route path={routes.DataPolicy.path} element={<DataPolicy />} />
+              <Route element={<PrivateGuard />}>
+                <Route path={routes.AthleteCard.path} element={<AthleteCard />} />
+              </Route>
             </Routes>
           </Layout>
           <Footer />

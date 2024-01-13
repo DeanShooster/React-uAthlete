@@ -2,6 +2,7 @@ import { notificationsLimit } from "../../../../constants";
 import { formatDateToLongString } from "../../../../utils/date";
 
 import "./index.scss";
+import { Megaphone } from "../../../../assets";
 
 interface INotification {
   title: string;
@@ -17,9 +18,12 @@ interface IAthleteNotifications {
 export const AthleteNotifications = ({ notifications, closeNotification }: IAthleteNotifications) => {
   return (
     <div className="notifications-container">
-      <h1>Notifications</h1>
+      <div className="notifications-title-wrapper">
+        <h1>Notifications</h1>
+        <img alt="" src={Megaphone} />
+      </div>
       <div className="notifications-wrapper">
-        {notifications?.map((notification: INotification, index: number) => {
+        {notifications?.reverse()?.map((notification: INotification, index: number) => {
           if (index >= notificationsLimit) return null;
           return (
             <div key={index} className="notification-wrapper">

@@ -3,6 +3,10 @@
 export { default as WebsiteLogo } from "./Svg/Header/Logo.svg";
 export { default as PulseHeart } from "./Svg/Header/PulseHeart.svg";
 export { default as Bell } from "./Svg/Header/Bell.svg";
+export { default as Megaphone } from "./Svg/Header/Megaphone.svg";
+
+// NoAuthGuard
+export { default as StopSign } from "./Svg/NoAuthGuard/StopSign.svg";
 
 //************************************** Images ********************************************************* */
 //HomePage

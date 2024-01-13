@@ -1,0 +1,76 @@
+@import "../../style/global.scss";
+
+.no-auth-container {
+  width: 100%;
+  margin-top: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .no-auth-wrapper {
+    display: flex;
+    flex-flow: column;
+    row-gap: 24px;
+
+    text-align: center;
+
+    @media (max-width: $mobile) {
+      row-gap: 16px;
+    }
+
+    & > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 16px;
+
+      h1 {
+        margin: 0;
+
+        font-size: 3.5rem;
+
+        @media (max-width: $mobile) {
+          font-size: 2rem;
+        }
+      }
+
+      img {
+        width: 4rem;
+        height: 4rem;
+
+        @media (max-width: $mobile) {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
+
+    p {
+      margin: 0;
+
+      font-size: 1.5rem;
+
+      @media (max-width: $mobile) {
+        max-width: 300px;
+        font-size: 1rem;
+      }
+    }
+
+    a {
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+
+      color: orange;
+
+      &:hover {
+        cursor: pointer;
+        color: white;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 1rem;
+      }
+    }
+  }
+}

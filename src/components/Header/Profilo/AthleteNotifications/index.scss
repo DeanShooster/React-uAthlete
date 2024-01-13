@@ -9,7 +9,9 @@
   width: 94.5%;
   padding: 20px 50px;
 
-  background-color: $main-bg;
+  background-color: #0c0c0c;
+
+  border-bottom: 1px solid $header-footer-border-color;
 
   animation: slide-in 0.5s ease-out;
 
@@ -27,10 +29,24 @@
     right: 0;
   }
 
-  & > h1 {
-    margin: 0 0 10px 0;
+  .notifications-title-wrapper {
+    margin-bottom: 20px;
 
-    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+
+    & > h1 {
+      margin: 0;
+
+      letter-spacing: 1px;
+      font-size: 2rem;
+    }
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 
   .notifications-wrapper {
@@ -82,6 +98,7 @@
         font-size: 1.25rem;
         letter-spacing: 0.5px;
         font-style: italic;
+        color: $orange;
 
         @media (max-width: $ipad) {
           margin: 5px 0;

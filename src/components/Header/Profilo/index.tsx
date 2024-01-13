@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AthleteContext } from "../../../context/AthleteContext";
-import { white, screenSize } from "../../../constants";
+import { white, screenSize, tokenName } from "../../../constants";
 import useWindowSize from "../../../hooks/useWindowSize";
+import { UpdateNotificationRead } from "../../../API/Notifications";
+import { routes } from "../../../Routes";
 
 import { NotificationBell } from "./NotificationBell";
 import { AthleteNotifications } from "./AthleteNotifications";
@@ -15,6 +17,8 @@ export const Profilo = () => {
   const width = useWindowSize();
   const { athlete, setAthlete } = useContext(AthleteContext);
   const [openNotifications, setOpenNotifications] = useState<boolean>(false);
+
+  const navigate = useNavigate();
 
   const dividerStyle = {
     size: 1,
@@ -29,7 +33,7 @@ export const Profilo = () => {
     if (!athlete?.notifications.isRead) {
       const notifications = { ...athlete?.notifications, isRead: true };
       setAthlete({ ...athlete, notifications });
-      // Update DB isRead
+      await UpdateNotificationRead(localStorage.getItem(tokenName));
     }
   };
 
@@ -41,7 +45,7 @@ export const Profilo = () => {
         {athlete?.personalDetails.name}
       </Link>
       <Divider {...dividerStyle} />
-      <img alt="" src={Graphs} className="graph" />
+      <img alt="" src={Graphs} className="graph" onClick={() => navigate(routes.AthleteCard.path)} />
       {openNotifications && <AthleteNotifications notifications={athlete?.notifications.messages} closeNotification={() => setOpenNotifications(false)} />}
     </nav>
   );
