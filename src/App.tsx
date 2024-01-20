@@ -26,7 +26,7 @@ function App() {
               <Route path={routes.Home.path} element={<HomePage />} />
               <Route path={routes.Privacy.path} element={<PrivacyPolicy />} />
               <Route path={routes.DataPolicy.path} element={<DataPolicy />} />
-              <Route element={<PrivateGuard />}>
+              <Route path={routes.AthleteCard.path} element={<PrivateGuard />}>
                 <Route path={routes.AthleteCard.path} element={<AthleteCard />} />
               </Route>
             </Routes>

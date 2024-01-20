@@ -1,0 +1,16 @@
+@import "../../../../style/global.scss";
+
+.general-athlete-stats-container {
+  width: fit-content;
+  padding: 24px;
+
+  display: flex;
+
+  background: $sub-bg-cards;
+
+  border: 1px solid $sub-bg-border;
+  border-radius: 12px;
+
+  .general-athlete-stats-wrapper {
+  }
+}

@@ -1,0 +1,72 @@
+@import "../../../style/global.scss";
+
+.athlete-card-nav {
+  width: fit-content;
+  padding: 16px 24px;
+
+  display: flex;
+  column-gap: 64px;
+
+  background: $sub-bg-cards;
+  color: $orange;
+
+  border-radius: 15px;
+  border: 1px solid $sub-bg-border;
+
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 0 0px 2px $orange;
+  letter-spacing: 1px;
+  white-space: nowrap;
+
+  transition: 0.5s;
+
+  @media (max-width: $ipad) {
+    padding: 12px 20px;
+    column-gap: 16px;
+    font-size: 16px;
+  }
+
+  @media (max-width: $mobile) {
+    margin: 0 auto;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 6px;
+
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  & > div {
+    padding: 8px 12px;
+
+    border-radius: 10px;
+
+    @media (max-width: $ipad) {
+      padding: 6px 8px;
+    }
+    @media (max-width: $mobile) {
+      padding: 4px 6px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $main-text-color;
+      text-shadow: 0 0px 2px $main-text-color;
+
+      transform: scale(1.05);
+      transition: 0.5s;
+    }
+  }
+
+  .active-nav {
+    background: $sub-bg-cards;
+    color: $main-text-color;
+
+    text-shadow: 0 0px 2px $main-text-color;
+
+    outline: 1px solid $main-text-color;
+  }
+}

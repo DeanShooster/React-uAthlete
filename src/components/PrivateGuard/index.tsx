@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import { AthleteContext } from "../../context/AthleteContext";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 import "./index.scss";
 import { StopSign } from "../../assets";
 
-export const PrivateGuard: React.FC<any> = (props) => {
+export const PrivateGuard = () => {
   const { athlete } = useContext(AthleteContext);
   return (
     <>
       {athlete ? (
-        props.children
+        <Outlet />
       ) : (
         <section className="no-auth-container">
           <div className="no-auth-wrapper">
@@ -19,7 +19,7 @@ export const PrivateGuard: React.FC<any> = (props) => {
               <img alt="" src={StopSign} />
             </div>
             <p>Please login or create a new account if you did not sign up previously</p>
-            <Link to="">Back to HomePage</Link>
+            <Link to="/">Back to HomePage</Link>
           </div>
         </section>
       )}

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AthleteContext } from "../../../context/AthleteContext";
 import { white, screenSize, tokenName } from "../../../constants";
 import useWindowSize from "../../../hooks/useWindowSize";
@@ -10,15 +10,12 @@ import { NotificationBell } from "./NotificationBell";
 import { AthleteNotifications } from "./AthleteNotifications";
 
 import "./index.scss";
-import { Graphs } from "../../../assets";
 import { Divider } from "../../Divider";
 
 export const Profilo = () => {
   const width = useWindowSize();
   const { athlete, setAthlete } = useContext(AthleteContext);
   const [openNotifications, setOpenNotifications] = useState<boolean>(false);
-
-  const navigate = useNavigate();
 
   const dividerStyle = {
     size: 1,
@@ -41,11 +38,9 @@ export const Profilo = () => {
     <nav className="profilo-container">
       <NotificationBell isRead={athlete?.notifications.isRead} openNotifications={notificationsHandler} />
       <Divider {...dividerStyle} />
-      <Link className="athlete-name" to="">
+      <Link className="athlete-name" to={routes.AthleteCard.path}>
         {athlete?.personalDetails.name}
       </Link>
-      <Divider {...dividerStyle} />
-      <img alt="" src={Graphs} className="graph" onClick={() => navigate(routes.AthleteCard.path)} />
       {openNotifications && <AthleteNotifications notifications={athlete?.notifications.messages} closeNotification={() => setOpenNotifications(false)} />}
     </nav>
   );
