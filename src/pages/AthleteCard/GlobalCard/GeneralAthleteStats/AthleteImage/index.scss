@@ -1,0 +1,13 @@
+.athlete-image-wrapper {
+  height: 100%;
+
+  position: relative;
+
+  img {
+    width: 250px;
+    max-height: 285px;
+    position: absolute;
+    top: -60px;
+    right: 0;
+  }
+}

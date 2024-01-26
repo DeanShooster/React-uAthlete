@@ -1,0 +1,55 @@
+@import "../../../../style/global.scss";
+
+.weight-stats-card-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+
+  .weight-stats-card-wrapper {
+    padding: 16px;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    background: $sub-bg-cards;
+    box-shadow: $general-card-box-shadow;
+
+    border: 1px solid $sub-bg-border;
+    border-radius: 12px;
+
+    & > h2 {
+      margin: 0 0 16px 0;
+
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    .weight-bmi-progress-wrapper {
+      margin-bottom: 10px;
+
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+
+      span {
+        font-size: 1.25rem;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    .weight-bmi-graph-percent-wrapper {
+      display: flex;
+      align-items: center;
+      column-gap: 7px;
+
+      img {
+        width: 30px;
+      }
+
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
+}

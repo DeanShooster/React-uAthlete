@@ -11,10 +11,10 @@ export const GeneralAthleteStats = () => {
     <div className="general-athlete-stats-container">
       <div className="general-athlete-stats-wrapper">
         <Title />
-        <Divider />
+        <Divider color="gray" />
         <Stats />
       </div>
-      <div>
+      <div className="general-athlete-image-rank-wrapper">
         <AthleteImage />
         <AthleteRank />
       </div>

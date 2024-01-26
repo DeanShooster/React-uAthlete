@@ -2,15 +2,25 @@
 
 .general-athlete-stats-container {
   width: fit-content;
-  padding: 24px;
+  padding: 24px 24px 48px 48px;
 
   display: flex;
 
   background: $sub-bg-cards;
+  box-shadow: $general-card-box-shadow;
 
   border: 1px solid $sub-bg-border;
   border-radius: 12px;
 
   .general-athlete-stats-wrapper {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .general-athlete-image-rank-wrapper {
+    min-width: 250px;
+
+    display: flex;
+    flex-flow: column;
   }
 }

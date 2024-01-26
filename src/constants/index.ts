@@ -22,3 +22,6 @@ export const maxWeightHeight: number = 250;
 
 // Notifications
 export const notificationsLimit: number = 8;
+
+// Athlete Card
+export const noData: string = "No Data";

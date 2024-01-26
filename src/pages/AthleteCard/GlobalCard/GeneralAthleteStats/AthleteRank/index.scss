@@ -1,0 +1,12 @@
+@import "../../../../../style/global.scss";
+
+.athlete-rank-wrapper {
+  display: flex;
+  justify-content: center;
+
+  button {
+    @include btn-default($orange, black);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+}

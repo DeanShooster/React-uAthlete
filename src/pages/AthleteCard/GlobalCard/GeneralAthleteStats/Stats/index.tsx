@@ -1,3 +1,13 @@
+import { GeneralStats } from "./GeneralStats";
+import { SpecificStats } from "./SpecificStats";
+
+import "./index.scss";
+
 export const Stats = () => {
-  return null;
+  return (
+    <div className="global-stats-wrapper">
+      <GeneralStats />
+      <SpecificStats />
+    </div>
+  );
 };

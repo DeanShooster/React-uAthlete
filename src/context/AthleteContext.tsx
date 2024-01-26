@@ -13,7 +13,7 @@ interface IAthlete {
   personalDetails: {
     name: string;
     gender: boolean;
-    weight: number;
+    weight: number[];
     height: number;
   };
   athleteRank: number;
