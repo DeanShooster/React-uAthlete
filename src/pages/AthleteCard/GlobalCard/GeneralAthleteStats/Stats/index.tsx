@@ -14,7 +14,7 @@ export const Stats = () => {
     if (!athlete) return null;
     const strengthProgress: number = CategoryProgressCalculator(Object.values(athlete.progress.strength));
     const enduranceProgress: number = CategoryProgressCalculator(Object.values(athlete.progress.endurance));
-    const staminaProgress: number = CategoryProgressCalculator(Object.values(athlete.progress.stamina));
+    const staminaProgress: number = CategoryProgressCalculator(Object.values(athlete.progress.stamina)) * -1;
     const totalProgress: number = TotalProgressionCalculator(strengthProgress, enduranceProgress, staminaProgress, athlete.progressionUpdates.length);
     const avgProgress: number = AvgProgressCalculator(strengthProgress, enduranceProgress, staminaProgress);
 

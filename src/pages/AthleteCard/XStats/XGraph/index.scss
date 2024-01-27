@@ -1,0 +1,41 @@
+@import "../../../../style/global.scss";
+
+.stats-graph-container {
+  padding: 24px 48px 60px 24px;
+  width: 28%;
+  max-height: 400px;
+
+  background: $sub-bg-cards;
+
+  border: 1px solid $sub-bg-border;
+  box-shadow: $general-card-box-shadow;
+
+  @media (max-width: 1600px) {
+    width: 25%;
+  }
+
+  @media (max-width: $ipad) {
+    width: 40%;
+  }
+  @media (max-width: 850px) {
+    width: 100%;
+  }
+  @media (max-width: $mobile) {
+    padding: 16px 24px 45px 12px;
+    max-height: 275px;
+  }
+
+  & > h1 {
+    margin: 0 0 24px 0;
+
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: 2px;
+    color: rgb(187, 187, 187);
+
+    @media (max-width: $mobile) {
+      margin: 0 0 16px 0;
+      font-size: 1.25rem;
+    }
+  }
+}

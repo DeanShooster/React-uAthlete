@@ -2,9 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { AthleteContext } from "../../../context/AthleteContext";
 import { INav } from "..";
 
-import "./index.scss";
 import { XGraph } from "./XGraph";
+import { EmptyCategory } from "./EmptyCategory";
 
+import "./index.scss";
 interface IXStats {
   category: INav;
 }
@@ -44,11 +45,23 @@ export const XStats = ({ category }: IXStats) => {
     }
   }, [category, athlete]);
 
+  let isEmptyCategory = true;
+  for (let i = 0; i < selectedCategory.length; i++) {
+    if (selectedCategory[i].data.length > 0) {
+      isEmptyCategory = false;
+      break;
+    }
+  }
+
   return (
     <div className="x-category-stats-container">
-      {selectedCategory.map((category: any, index: number) => {
-        return <XGraph key={index} title={category.title} data={category.data} />;
-      })}
+      {!isEmptyCategory ? (
+        selectedCategory.map((item: any, index: number) => {
+          return <XGraph key={index} title={item.title} data={item.data} category={category} />;
+        })
+      ) : (
+        <EmptyCategory />
+      )}
     </div>
   );
 };
