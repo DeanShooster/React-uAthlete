@@ -15,14 +15,14 @@ export interface INavItem {
 export type INav = "GLOBAL" | "STRENGTH" | "ENDURANCE" | "STAMINA";
 
 export const AthleteCard = () => {
+  const [nav, setNav] = useState<INav>("GLOBAL");
+
   const navItems: INavItem[] = [
     { key: "GLOBAL", label: "Global Stats", component: <GlobalCard key={0} /> },
-    { key: "STRENGTH", label: "Strength", component: <XStats key={1} /> },
-    { key: "ENDURANCE", label: "Endurance", component: <XStats key={2} /> },
-    { key: "STAMINA", label: "Stamina", component: <XStats key={3} /> },
+    { key: "STRENGTH", label: "Strength", component: <XStats key={1} category={nav} /> },
+    { key: "ENDURANCE", label: "Endurance", component: <XStats key={2} category={nav} /> },
+    { key: "STAMINA", label: "Stamina", component: <XStats key={3} category={nav} /> },
   ];
-
-  const [nav, setNav] = useState<INav>("GLOBAL");
 
   return (
     <section className="athlete-card-page">

@@ -1,29 +1,35 @@
 import "./index.scss";
 import { ProgressDownGraph, ProgressUpGraph } from "../../../../../../assets";
 
-export const SpecificStats = () => {
+interface ISpecificStats {
+  strength: number;
+  endurance: number;
+  stamina: number;
+}
+
+export const SpecificStats = ({ strength, endurance, stamina }: ISpecificStats) => {
   return (
     <div className="specific-stats-container">
       <div className="specific-stats-wrapper">
         <div>
           <h3>Strength</h3>
           <div>
-            <img alt="" src={ProgressUpGraph} />
-            <span>24%</span>
+            <img alt="" src={strength > 0 ? ProgressUpGraph : ProgressDownGraph} />
+            <span>{strength}%</span>
           </div>
         </div>
         <div>
           <h3>Endurance</h3>
           <div>
-            <img alt="" src={ProgressUpGraph} />
-            <span>32%</span>
+            <img alt="" src={endurance > 0 ? ProgressUpGraph : ProgressDownGraph} />
+            <span>{endurance}%</span>
           </div>
         </div>
         <div>
           <h3>Stamina</h3>
           <div>
-            <img alt="" src={ProgressDownGraph} />
-            <span>14%</span>
+            <img alt="" src={stamina > 0 ? ProgressUpGraph : ProgressDownGraph} />
+            <span>{stamina}%</span>
           </div>
         </div>
       </div>

@@ -3,8 +3,6 @@ import { AthleteContext } from "../../../../context/AthleteContext";
 import { BMICalculator } from "../../../../utils/algorithms";
 import { noData } from "../../../../constants";
 
-import { BMIGraph } from "./BMIGraph";
-
 import "./index.scss";
 import { ArrowRight, BouncyArrowDown, BouncyArrowUp } from "../../../../assets";
 
@@ -32,7 +30,6 @@ export const WeightStats = () => {
     <div className="weight-stats-card-container">
       <div className="weight-stats-card-wrapper">
         <h2>BMI {athleteBMIStats.currentBMI}</h2>
-        <BMIGraph BMI={athleteBMIStats.currentBMI} />
         <div className="weight-bmi-progress-wrapper">
           <span>{athleteBMIStats.previousBMI || noData}</span>
           <img alt="" src={ArrowRight} />
