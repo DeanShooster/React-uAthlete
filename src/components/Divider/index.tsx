@@ -7,9 +7,10 @@ interface IDivider {
     bottom?: number;
   };
   borderR?: number;
+  freeStyle?: any;
 }
 
-export const Divider = ({ size, height, color, margin, borderR }: IDivider) => {
+export const Divider = ({ size, height, color, margin, borderR, freeStyle }: IDivider) => {
   return (
     <hr
       style={{
@@ -19,6 +20,7 @@ export const Divider = ({ size, height, color, margin, borderR }: IDivider) => {
         marginTop: `${margin?.top || 8}px`,
         marginBottom: `${margin?.bottom || 8}px`,
         borderRadius: `${borderR || 0}%`,
+        ...freeStyle,
       }}
     />
   );

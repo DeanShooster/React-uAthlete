@@ -1,0 +1,23 @@
+@import "../../../../style/global.scss";
+
+.summarized-graph-metadata-container {
+  padding: 16px;
+
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+
+  background: $sub-bg-cards;
+  box-shadow: $general-card-box-shadow;
+
+  border: 1px solid $sub-bg-border;
+  border-radius: 12px;
+
+  h2 {
+    margin: 0 0 20px 0;
+
+    text-align: center;
+    text-decoration: underline;
+    letter-spacing: 1px;
+  }
+}
