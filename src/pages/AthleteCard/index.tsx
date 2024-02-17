@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { MetaProDataContextProvider } from "../../context/MetaProDataContext";
 
 import { NavHeader } from "./NavHeader";
 import { GlobalCard } from "./GlobalCard";
@@ -27,9 +28,11 @@ export const AthleteCard = () => {
   return (
     <section className="athlete-card-page">
       <NavHeader navItems={navItems} nav={nav} setNav={setNav} />
-      {navItems.map(({ key, component }) => {
-        return nav === key ? component : null;
-      })}
+      <MetaProDataContextProvider>
+        {navItems.map(({ key, component }) => {
+          return nav === key ? component : null;
+        })}
+      </MetaProDataContextProvider>
     </section>
   );
 };

@@ -8,6 +8,7 @@
   background: $sub-bg-cards;
 
   border: 1px solid $sub-bg-border;
+  border-radius: 6px;
   box-shadow: $general-card-box-shadow;
 
   @media (max-width: 1600px) {

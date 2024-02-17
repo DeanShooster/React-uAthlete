@@ -1,3 +1,6 @@
+import { IAthlete } from "../context/AthleteContext";
+import { IData } from "../context/MetaProDataContext";
+
 /**
  * Calculates generic BMI. (weight,height) -> 15.17
  * @param weight
@@ -52,4 +55,15 @@ export function AvgProgressCalculator(strengthProgress: number, enduranceProgres
  */
 export function TotalProgressionCalculator(strengthProgress: number, enduranceProgress: number, staminaProgress: number, progressionDuration: number) {
   return Math.round((strengthProgress + enduranceProgress + staminaProgress) / progressionDuration > 0 ? progressionDuration : 1);
+}
+
+/**
+ *
+ * @param athlete Athlete Context Data
+ * @param metaProData Meta or Pro Context Data
+ */
+export function RadarGraphCalculator(athlete: IAthlete, metaProData: IData) {
+  const athleteProgressData = athlete.progress;
+  console.log(athleteProgressData, metaProData);
+  // Figure out algorithm
 }

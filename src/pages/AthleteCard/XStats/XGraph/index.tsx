@@ -33,13 +33,9 @@ export const XGraph = ({ title, data, category }: IXGraph) => {
     const workoutName = workout.toLocaleLowerCase();
     if (category === "STRENGTH" && (workoutName === "benchpress" || workoutName === "deadlift" || workoutName === "squat")) return "KG";
     if (category === "ENDURANCE") {
-      if (workoutName === "bike5km") return "M";
-      else if (workoutName === "plank") return "S";
+      if (workoutName === "bike5km" || workoutName === "plank") return "S";
     }
-    if (category === "STAMINA") {
-      if (workoutName.includes("sprint")) return "S";
-      else return "M";
-    }
+    if (category === "STAMINA") return "S";
   };
 
   const themeColorHandler = () => {

@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { Legend, PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
 import { MetaProDataContext } from "../../../../../context/MetaProDataContext";
+import { AthleteContext } from "../../../../../context/AthleteContext";
+import { RadarGraphCalculator } from "../../../../../utils/algorithms";
 
 interface IRadarGraph {
   graphStyle: {
@@ -20,30 +22,34 @@ interface IProData {
 
 export const ProRadarGraph = ({ graphStyle }: IRadarGraph) => {
   const { metaProData } = useContext(MetaProDataContext);
+  const { athlete } = useContext(AthleteContext);
   const [proData, setProData] = useState<IProData[]>([]);
 
   useEffect(() => {
-    if (metaProData) {
-      const data: IProData[] = [
-        {
-          subject: "Strength",
-          athleteData: metaProData?.athleteData.strength,
-          proData: metaProData?.proData.strength,
-        },
-        {
-          subject: "Endurance",
-          athleteData: metaProData?.athleteData.endurance,
-          proData: metaProData?.proData.endurance,
-        },
-        {
-          subject: "Stamina",
-          athleteData: metaProData?.athleteData.stamina,
-          proData: metaProData?.proData.stamina,
-        },
-      ];
-      setProData(data);
+    if (metaProData && athlete) {
+      const graphData = RadarGraphCalculator(athlete, metaProData.metaData);
     }
-  }, [metaProData]);
+    // if (metaProData) {
+    //   const data: IProData[] = [
+    //     {
+    //       subject: "Strength",
+    //       athleteData: metaProData?.athleteData.strength,
+    //       proData: metaProData?.proData.strength,
+    //     },
+    //     {
+    //       subject: "Endurance",
+    //       athleteData: metaProData?.athleteData.endurance,
+    //       proData: metaProData?.proData.endurance,
+    //     },
+    //     {
+    //       subject: "Stamina",
+    //       athleteData: metaProData?.athleteData.stamina,
+    //       proData: metaProData?.proData.stamina,
+    //     },
+    //   ];
+    //   setProData(data);
+    // }
+  }, [metaProData, athlete]);
 
   return (
     <div>

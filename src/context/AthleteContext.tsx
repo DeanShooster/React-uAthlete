@@ -8,7 +8,7 @@ interface IAthleteContext {
   setAthlete: Function;
 }
 
-interface IAthlete {
+export interface IAthlete {
   email: string;
   personalDetails: {
     name: string;
